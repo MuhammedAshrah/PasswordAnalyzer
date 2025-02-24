@@ -25,3 +25,9 @@ Password Strength Analysis: Assesses security level based on length, complexity,
 Real-time Keylogging Demonstration: Highlights the risks associated with unprotected input methods.
 
 Web-Based Interface: Runs on Flask, allowing easy interaction through a web browser.
+
+
+
+![image](https://github.com/user-attachments/assets/c307cf00-d299-491f-9111-1a264ad6081b)
+
+
