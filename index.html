@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Keyboard Password Entry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Virtual Keyboard Password Entry</h1>
+            <p class="warning">Ensure your hand is visible and well-lit for accurate detection.</p>
+        </header>
+
+        <div class="demo-container">
+            <!-- Webcam Feed -->
+            <div class="webcam-container">
+                <img id="webcam-feed" src="{{ url_for('video_feed') }}" alt="Webcam Feed">
+                <div id="typing-status" class="typing-status">Point to type...</div>
+            </div>
+
+            <!-- Password Info -->
+            <div class="password-info">
+                <div class="detected-password">
+                    <h3>Detected Password</h3>
+                    <div id="password-display" class="password-display">...</div>
+                </div>
+
+                <div class="instructions">
+                    <h3>Instructions</h3>
+                    <ul>
+                        <li>Point your index finger at the virtual keyboard to type.</li>
+                        <li>Close your palm to finish typing.</li>
+                        <li>If unsatisfied, click "Refresh" to start over.</li>
+                    </ul>
+                </div>
+
+                <div id="analysis-panel" class="analysis-panel hidden">
+                    <div class="strength-meter">
+                        <div id="strength-bar" class="strength-bar"></div>
+                        <div id="strength-text" class="strength-text">Strength: Very Weak</div>
+                    </div>
+
+                    <div class="feedback-list">
+                        <div id="feedback-items"></div>
+                    </div>
+
+                    <div id="leak-info" class="leak-info">Checking password safety...</div>
+                </div>
+
+                <button id="refresh-button" class="hidden">Refresh</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
